@@ -1,15 +1,14 @@
 {
   "name": "3-enter-the-node",
   "version": "1.0.0",
-  "description": "hei",
+  "description": "**Before doing anything else, make sure Node.js is installed from MSC!**",
   "main": "hello.js",
-  "dependencies": {
-    "express": "^4.14.0"
-  },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "eryoon2019@mirmanmustangs.org",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }
