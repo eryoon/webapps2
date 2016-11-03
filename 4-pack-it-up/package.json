@@ -1,0 +1,14 @@
+{
+  "name": "4-pack-it-up",
+  "version": "1.0.0",
+  "description": "It's time to start using our real toolset. Instead of loading things by using File → Open, we're going to set up tools that do the following:",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
+}
