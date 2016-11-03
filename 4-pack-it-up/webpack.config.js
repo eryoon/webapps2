@@ -5,8 +5,11 @@ module.exports = {
   entry: "./src",
   output: {
     path: path.join(__dirname, "public/assets/js"),
-    publicPath: "/assets/js/",
-    filename: "bundle.js"
+    filename: "bundle.js",
+    publicPath: "/assets/js"
+  },
+  devServer: {
+    contentBase: "public"
   },
   module: {
     preLoaders: [{
