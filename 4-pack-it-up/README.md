@@ -57,6 +57,7 @@ npm is not enough. We need another tool.
 npm will give us the second part, however.
 
   $ sudo npm install -g webpack
+  $ npm install --save-dev webpack webpack-dev-server
 
 That first command installs npm packages globally. The advantage here is that we have access to the programs directly from the command line. That'll be helpful in the build process.
 
