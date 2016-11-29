@@ -1,0 +1,14 @@
+{
+  "name": "5-load-from-node",
+  "version": "1.0.0",
+  "description": "Time to use our tools to do some work. Most useful apps require a _data layer_, or _persistence layer_. Anything from account information to savegames would be stored in this component of our app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
