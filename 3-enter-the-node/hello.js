@@ -17,8 +17,6 @@ app.get('/greet/:name', function (req, res) {
 app.listen(port, function () {
   console.log('Vroom Vroom! And there he goes on port ' + port + '! (we listenin\' now)');
 /*
-
-
   app.get('/', function (req, res) {
     res.send('Great you found seecret');
   });
@@ -26,6 +24,11 @@ app.listen(port, function () {
   app.listen(3002, function () {
     console.log('listening on port 3002!');
   });
+
+  ***
+  I will fix this later
+  ***
+
 */
 
 });
