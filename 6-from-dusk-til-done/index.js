@@ -1,3 +1,4 @@
+'use strict';
 const express = require("express");
 const bodyParser = require("body-parser");
 const fs = require("fs");
@@ -19,7 +20,7 @@ function loadTodos(callback) {
 }
 
 function saveTodos(json, callback) {
-  return fs.writeFile(db, JSON.stringify(json), callback);
+  return fs.writeFile(db, JSON.stringify(json, null, " "), callback);
 }
 
 app.route("/todos")

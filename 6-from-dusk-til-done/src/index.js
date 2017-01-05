@@ -10,6 +10,7 @@ function getTodos() {
   )
   .done( (data) => {
     // This is bad and I should feel bad for writing it. Why?
+    console.log("SUCCESS!! YAY!");
     todos = data;
     console.log(data);
   })
@@ -21,4 +22,4 @@ function getTodos() {
 
 $(document).ready( () => {
   getTodos();
-})
+});
