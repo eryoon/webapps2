@@ -6,6 +6,7 @@ const port = 3000;
 
 const app = express(); //const lets you change the contents of it... so you cant change foo but you can change foo.bar
 app.use(bodyParser.json());
+app.use(express.static(__dirname + "/public"));
 
 function loadTodos(callback) {
     return fs.readFile("./todos.json", (err, data) => {
@@ -15,7 +16,6 @@ function loadTodos(callback) {
     });
 
 }
-
 
 app.route("/todos").get((req, res) => {
     loadTodos((json) => {
