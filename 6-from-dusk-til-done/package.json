@@ -1,0 +1,30 @@
+{
+  "name": "5-load-from-node",
+  "version": "1.0.0",
+  "description": "Time to use our tools to do some work. Most useful apps require a _data layer_, or _persistence layer_. Anything from account information to savegames would be stored in this component of our app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --inline --hot --port 3000"
+  },
+  "author": "mirman_mtaggart",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "eslint": "^3.12.2",
+    "eslint-loader": "^1.6.1",
+    "eslint-plugin-react": "^6.8.0",
+    "jquery": "^3.1.1",
+    "sass-loader": "^4.1.0",
+    "source-map-loader": "^0.1.5",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
