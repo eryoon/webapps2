@@ -30,15 +30,21 @@ app.route("/todos")
   });
 })
 .post((req, res) => {
+  console.log("we got in post");
   loadTodos((json) => {
+    console.log("we got in the callback of loadtodos");
     const todos = json.data;
+    console.log("we made todos var");
     json.lastId++;
     let newTodo = req.body;
+    console.log(req.body);
     newTodo.completed = false;
     newTodo.id = json.lastId;
     todos.push(newTodo);
     json.data = todos;
+    console.log("we about to go into savetodos");
     return saveTodos(json, (err) => {
+      console.log("we saved todos");
       if (err) throw err;
       res.status(200).end();
     });
