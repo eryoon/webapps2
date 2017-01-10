@@ -32,7 +32,9 @@ $(document).ready(() => {
         if(!a.completed && b.completed)
         return -1; //fallback case, we really dont need to check but lets do it N-E-ways
 
+        //im very proud of this sorting!! :)  I start to appreciate how easy javascript is. I have also overcome my initial loathing and phobia for anonymous funcs. Sorting is so easy, you dont have to deal with Interfaces (like c#)
       });
+
       $("#root").empty();
         todos.forEach((todo) => {
             todoListItem(todo, (newli) => {
@@ -41,18 +43,36 @@ $(document).ready(() => {
                 $("#todoDisp" + todo.id).hover(function() {
                     $("#textDisp" + todo.id).css("display", "none");
                     $("#editDisp" + todo.id).css("display", "inline");
+                    $("#delDisp" + todo.id).css("display", "inline");
                     //  console.log("'tis working, enter");
                 }, function() {
                     $("#textDisp" + todo.id).css("display", "inline");
                     $("#editDisp" + todo.id).css("display", "none");
+                    $("#delDisp" + todo.id).css("display", "none");
                     //  console.log("we exited")
                 });
                 /*      document.getElementById("todoDisp" + todo.id).addEventListener("focus", changeToEditable(todo.id, true));
                       document.getElementById("todoDisp" + todo.id).addEventListener("blur", changeToEditable(todo.id, false));*/
 
-            });
-        });
-    });
+                      $("#delDisp" + todo.id).click(() => {
+                        console.log("we will delete, just hang tight bro!");
+                        $.ajax({
+                            type: "DELETE",
+                            url: "todos/" + todo.id,
+                            success: function() {
+                                console.log("AAND... TOUCHDOWN!!! WE SUCCESS SEND AJAX!");
+                                alert("AAND... TOUCHDOWN!!! WE SUCCESS SEND AJAX! But you'll have to reload to see the changes!");
+                            }
+                        });
+                      });
+
+
+            }); //end of todoListItem
+
+
+
+        }); //end of todos foreach
+    }); //end of gettodos
     $("#submitbtn").click(() => {
         console.log("U PRES BUTON");
         var formData = {};
@@ -69,6 +89,7 @@ $(document).ready(() => {
             dataType: "json",
             contentType: "application/json"
         });
+        alert("AJAX sent successfully, idk how to read error codes so no clue on if it worked... the todo list doesnt update automagically, plz reload");
     });
 
 });
