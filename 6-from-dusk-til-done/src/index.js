@@ -8,7 +8,6 @@ function getTodos(callback) {
             }
         )
         .done((data) => {
-            // This is bad and I should feel bad for writing it. Why?
             console.log("SUCCESS!! YAY!");
             console.log(data);
             callback(data);
@@ -22,6 +21,18 @@ function getTodos(callback) {
 $(document).ready(() => {
 
     getTodos((todos) => {
+      todos.sort((a, b) => { //basically, if it is - then a will go "up" (closer to 0), if + then a will go down,
+        if(a.completed == b.completed)
+        return 0;
+        //we dont need else after this, return makes it act like that
+
+        if(a.completed && !b.completed)
+        return 1;
+
+        if(!a.completed && b.completed)
+        return -1; //fallback case, we really dont need to check but lets do it N-E-ways
+
+      });
       $("#root").empty();
         todos.forEach((todo) => {
             todoListItem(todo, (newli) => {
