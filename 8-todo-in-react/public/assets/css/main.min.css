@@ -1,0 +1,1 @@
+body{color:white;background:#0064ff;font-size:18px}.todo h3{display:inline-block}.edit-todo{overflow-y:hidden;max-height:0px;transition:all 0.5s cubic-bezier(0, 1, 0.5, 1)}.edit-todo.active{max-height:50px}
