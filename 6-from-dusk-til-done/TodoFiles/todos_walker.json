@@ -1,0 +1,20 @@
+{
+ "data": [
+  {
+   "text": "Welcome to todos++, the next generation todos app!",
+   "completed": false,
+   "id": 1
+  },
+  {
+   "text": "It's simple: you can add todos down below and edit by hovering.",
+   "completed": false,
+   "id": 2
+  },
+  {
+   "text": "Completed todos float to the bottom, like this one.",
+   "completed": true,
+   "id": 3
+  }
+ ],
+ "lastId": 3
+}

@@ -2,36 +2,46 @@
 This is the "vanilla" css styling sheet, i prefer css to sass because it is... well more old school
 */
 
-body{
-  --colormain: #FFFF4F;
-  --colorhighlight: #4CE0D2;
-  /*Using vars... IE doesnt like it. BUT WHO USES IE ANYMORE?!*/
-  color: var(--colormain);
-  background-image: url('https://unsplash.it/720/450/?random&blur');
-  background-size: cover;
-  font-size: 18px;
-  font-family: 'Ubuntu', sans-serif; /*I'm a fan of sans-serif fonts, because serifs are just for typewriters*/
+body {
+    --colormain: #FFFF4F;
+    --colorhighlight: #4CE0D2;
+    /*Using vars... IE doesnt like it. BUT WHO USES IE ANYMORE?!*/
+    color: var(--colormain);
+    background-image: url('https://unsplash.it/720/450/?random&blur');
+    background-size: cover;
+    font-size: 18px;
+    font-family: 'Ubuntu', sans-serif;
+    /*I'm a fan of sans-serif fonts, because serifs are just for typewriters*/
 }
-.section{
-  padding: 5px;
-  border-color: var(--colorhighlight);
-  border-style: solid;
-  border-width: thin;
-  background-color: #000000; /*because IE doesnt support rgba...*/
-  background-color: rgba(0,0,0,0.6);
+
+.section {
+    padding: 5px;
+    border-color: var(--colorhighlight);
+    border-style: solid;
+    border-width: thin;
+    background-color: #000000;
+    /*because IE doesnt support rgba...*/
+    background-color: rgba(0, 0, 0, 0.6);
 }
-.todoDisplay{
-  display: none;
-  background-color: var(--colorhighlight);
-  /*outline: none;
+
+.todoDisplay {
+    display: none;
+    background-color: var(--colorhighlight);
+    /*outline: none;
   color: var(--colormain);
   background-color: rgba(0,0,0,0);*/
 }
-.todoDisplay:hover{/*
+
+.todoDisplay:hover {
+    /*
   background-color: var(--colorhighlight);
   */
-
 }
-.lowpacity{
-  opacity: .4;
+
+.lowpacity {
+    opacity: .4;
+}
+
+.wfull {
+    width: 50vw;
 }

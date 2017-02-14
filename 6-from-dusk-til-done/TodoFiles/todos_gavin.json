@@ -1,0 +1,20 @@
+{
+ "data": [
+  {
+   "text": "Watch kill-bill baby",
+   "completed": false,
+   "id": 1
+  },
+  {
+   "text": "Let's git kraken!",
+   "completed": true,
+   "id": 2
+  },
+  {
+   "text": "Wear a baby-blue uniform shirt to school",
+   "completed": false,
+   "id": 3
+  }
+ ],
+ "lastId": 3
+}

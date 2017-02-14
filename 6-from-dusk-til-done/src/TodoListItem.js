@@ -5,9 +5,10 @@ export default function todoListItem(todo, callback) {
     newli.append($(document.createElement("input"))
         .attr("type", "checkbox")
         .attr("checked", todo.completed)
-        .change(() => {
+        .attr("id", "doneDisp" + todo.id)
+        /*.change(() => {
           alert("Whoa there, mate. You can't just do dat and expect it t' work, ya know bro? The poor developah' behind dis program, he doesn't have dat much time. He says it's comin' soon, tho, so keep yo' eyes open!");
-        })
+        })*/
     );
     newli.append($(document.createElement("p"))
         .html(todo.text)
@@ -19,12 +20,12 @@ export default function todoListItem(todo, callback) {
     newli.append($(document.createElement("input"))
         .attr("type", "text")
         .attr("value", todo.text)
-        .attr("class", "todoDisplay")
+        .attr("class", "todoDisplay wfull")
         .attr("placeholder", "todo name...")
         .attr("id", "editDisp" + todo.id)
-        .change(() => {
+      /*  .change(() => {
           alert("Whoa there, mate. You can't just do dat and expect it t' work, ya know bro? The poor developah' behind dis program, he doesn't have dat much time. He says it's comin' soon, tho, so keep yo' eyes open!");
-        })
+        })*/
     );
 
     newli.append($(document.createElement("button"))

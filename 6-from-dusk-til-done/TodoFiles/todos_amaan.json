@@ -1,0 +1,20 @@
+{
+ "data": [
+  {
+   "text": "Heyyyy that's pretty WEBPACK!",
+   "completed": false,
+   "id": 1
+  },
+  {
+   "text": "heyyyyyyyyyyyyy",
+   "completed": true,
+   "id": 2
+  },
+  {
+   "text": "<h1>HEYYYYYY!</h1>",
+   "completed": false,
+   "id": 3
+  }
+ ],
+ "lastId": 3
+}
