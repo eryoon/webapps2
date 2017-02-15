@@ -1,8 +1,26 @@
 import $ from "jquery";
 import {
-    getTodos
+    getTodos, deleteTodo
 } from "./actions";
 import todoListItem from "./TodoListItem";
+
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
+var user = getUrlParameter("user");
+
+
 
 function UpdateTodoDisplay(todos) {
     console.log("UUPDATTE TODOOO DISSSPLAY");
@@ -42,18 +60,9 @@ function UpdateTodoDisplay(todos) {
             $("#delDisp" + todo.id).click(() => {
                 if (true || confirm("Are you absolutely, positively, undoubtedly sure you want to send this todo to the pit of death??\n\nThis action is 100% irreversible, irrevocable, irrefundable... you get the point.\n\nSo you SURE you want to do this?!")) {
                     console.log("we will delete, just hang tight bro!");
-                    $.ajax({
-                            type: "DELETE",
-                            url: "/todos/" + user + "/" + todo.id,
-                            success: function() {
-                                console.log("AAND... TOUCHDOWN!!! WE SUCCESS SEND AJAX!");
-                                //  alert("AAND... TOUCHDOWN!!! WE SUCCESS SEND AJAX! But you'll have to reload to see the changes!");
 
-                            }
-                        })
-                        .done((res) => {
-                            console.log(res);
-                        });
+                    deleteTodo([], todo.id, user);
+
                 }
             });
 
@@ -65,20 +74,8 @@ function UpdateTodoDisplay(todos) {
                 console.log(JSON.stringify(formData));
                 console.log($("#doneDisp" + todo.id).prop("checked"));
 
-                $.ajax({
-                        type: "PUT",
-                        url: "/todos/" + user + "/" + todo.id,
-                        data: JSON.stringify(formData),
-                        success: function() {
-                            console.log("Oh yeah! we did it, we PUT it!");
 
-                        },
-                        dataType: "json",
-                        contentType: "application/json"
-                    })
-                    .done((res) => {
-                        console.log(res);
-                    });
+
             });
 
 
@@ -91,17 +88,7 @@ function UpdateTodoDisplay(todos) {
                 console.log(JSON.stringify(formData));
                 console.log($("#doneDisp" + todo.id).prop("checked"));
 
-                $.ajax({
-                    type: "PUT",
-                    url: "/todos/" + user + "/" + todo.id,
-                    data: JSON.stringify(formData),
-                    success: function() {
-                        console.log("Oh yeah! we did it, we PUT it!");
-                        getTodos([], user);
-                    },
-                    dataType: "json",
-                    contentType: "application/json"
-                });
+
 
                 //  alert("AJAX sent successfully, the todo list doesnt update automagically, plz reload");
 
@@ -142,14 +129,14 @@ export default function reducer(state, action) {
                     }
                 })
                 .done((res) => {
-                    UpdateTodoDisplay("Were in delete havent done this yet is UpdateTodoDisplay");
+                    //pdateTodoDisplay(res);
                     return res;
                 });
         case "ADD_TODO":
             return $.ajax({
                     type: "POST",
                     url: "/todos/" + action.user + "/",
-                    data: JSON.stringify(formData),
+                    data: JSON.stringify(action.newTodo),
                     success: function() {
                         console.log("Oh yeah! we did it");
 
@@ -158,7 +145,7 @@ export default function reducer(state, action) {
                     contentType: "application/json"
                 })
                 .done((res) => {
-
+                    UpdateTodoDisplay(res);
                     return res;
                 });
         default:

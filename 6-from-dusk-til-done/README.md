@@ -1,3 +1,11 @@
+# Eric's Program Notes
+Hello. Thank you for using Todos++, the next generation todos app for the 21st century. This is a brief user guide as of Feb. 14, 2017.
+
+First of all, editing the text or checked status of todos does not work. The delete and create buttons work.
+
+Checked todos are sifted towards the bottom.
+
+
 # 6: From Dusk 'Til Done
 Now that we have our server-side (backend) code working, and our REST API (the `GET`, `POST`, `PUT`, and `DELETE` components), it's time to build the client-side (frontend) of our app.
 

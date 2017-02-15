@@ -44,33 +44,11 @@ $(document).ready(() => {
 getTodos([], user);
 }
     $("#submitbtn").click(() => {
-      /*  console.log("U PRES BUTON");
-        var formData = {};
-        formData.text = $("#newtodoform").val();
-        console.log(JSON.stringify(formData));
-        console.log($("#newtodoform").val());
-
-        $.ajax({
-            type: "POST",
-            url: "/todos/" + user + "/",
-            data: JSON.stringify(formData),
-            success: function() {
-                console.log("Oh yeah! we did it");
-
-            },
-            dataType: "json",
-            contentType: "application/json"
-        })
-        .done((res) => {
-          console.log(res);
-        });
-        */
         console.log("U CLIK BTN");
         const newTodo = {
-          text: $("#newtodoform").val(),
-          user: "eric"
+          text: $("#newtodoform").val()
         };
-        addTodo([],newTodo);
+        addTodo([],newTodo,user);
 
       //alert("AJAX sent successfully, idk how to read error codes so no clue on if it worked... the todo list doesnt update automagically, plz reload");
 

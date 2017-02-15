@@ -1,10 +1,11 @@
 import reducer from "./reducer";
 
-export function addTodo(state, newTodo) {
+export function addTodo(state, newTodo, user) {
   console.log("in addtodo in actionsjs");
   return reducer(state, {
     type: "ADD_TODO",
-    newTodo
+    newTodo,
+    user
   });
 }
 
@@ -15,9 +16,10 @@ export function getTodos(state, user) {
   });
 }
 
-export function deleteTodo(state, id) {
+export function deleteTodo(state, id, user) {
   return reducer(state, {
     type: "DELETE_TODO",
-    id
+    id,
+    user
   });
 }
