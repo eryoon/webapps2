@@ -5,6 +5,19 @@ First of all, editing the text or checked status of todos does not work. The del
 
 Checked todos are sifted towards the bottom.
 
+When visiting [ip]:3000, you will be confronted with an alert. you must enter a valid name, or THE PROGRAM WILL SHUT DOWN! Here are valid names: (case-sensitive, white space sensitive)
+
+* taggart
+* eric
+* gavin
+* august
+* katarina
+* walker
+* amaan
+* bobjoe
+_"what happened to Jane Teststudent?"
+
+
 
 # 6: From Dusk 'Til Done
 Now that we have our server-side (backend) code working, and our REST API (the `GET`, `POST`, `PUT`, and `DELETE` components), it's time to build the client-side (frontend) of our app.
